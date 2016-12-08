@@ -1,0 +1,141 @@
+CRYPTO CODE
+Reference: JMussett 2016
+
+https://bitwiseshiftleft.github.io/sjcl/demo/
+https://github.com/bitwiseshiftleft/sjcl/tree/version-0.8
+(STANFORD UNIVERSITY CODE)
+
+JAVASCRIPT CDN LIBRARIES( NO ALL) BUT CENTRALIZED
+Reference: JMussett 2016
+
+https://cdnjs.com/libraries
+
+ENCRIPT JSON IN REQUEST AND POSTS
+https://github.com/pussinboots/angularjs-crypto
+http://angularjs-crypto.herokuapp.com/#/get
+
+SORTS SOLUTIONS
+
+Initializing the model using an Angular controller, defined with a global function.
+https://github.com/curran/screencasts/blob/gh-pages/introToAngular/examples/snapshots/snapshot10/index.html
+
+Initializing the model using an Angular controller, defined within an Angular module.
+https://github.com/curran/screencasts/blob/gh-pages/introToAngular/examples/snapshots/snapshot11/index.html
+
+Changing scope values asynchronously - updates don't propagate without .apply().
+https://github.com/curran/screencasts/blob/gh-pages/introToAngular/examples/snapshots/snapshot12/index.html
+
+Changing scope values asynchronously - updates propagate .apply().
+https://github.com/curran/screencasts/blob/gh-pages/introToAngular/examples/snapshots/snapshot13/index.html
+
+Looping over lists in templates using ng-repeat.
+https://github.com/curran/screencasts/blob/gh-pages/introToAngular/examples/snapshots/snapshot14/index.html
+
+Adding entries to a list using forms and ng-submit.
+https://github.com/curran/screencasts/blob/gh-pages/introToAngular/examples/snapshots/snapshot15/index.html
+
+Clearing the entered name on submit using data binding.
+https://github.com/curran/screencasts/blob/gh-pages/introToAngular/examples/snapshots/snapshot16/index.html
+
+Removing names from a list using ng-click.
+https://github.com/curran/screencasts/blob/gh-pages/introToAngular/examples/snapshots/snapshot17/index.html
+
+Enumerating objects - countries and their populations.
+https://github.com/curran/screencasts/blob/gh-pages/introToAngular/examples/snapshots/snapshot18/index.html
+
+Building a table.
+https://github.com/curran/screencasts/blob/gh-pages/introToAngular/examples/snapshots/snapshot19/index.html
+
+Fetching JSON.
+https://github.com/curran/screencasts/blob/gh-pages/introToAngular/examples/snapshots/snapshot20/index.html
+
+Dependency injection syntax for minification.
+https://github.com/curran/screencasts/blob/gh-pages/introToAngular/examples/snapshots/snapshot21/index.html
+
+Adding search using Angular filters.
+https://github.com/curran/screencasts/blob/gh-pages/introToAngular/examples/snapshots/snapshot22/index.html
+
+Sorting in ng-repeat using orderBy
+https://github.com/curran/screencasts/blob/gh-pages/introToAngular/examples/snapshots/snapshot23/index.html
+
+Sorting in descending order
+https://github.com/curran/screencasts/blob/gh-pages/introToAngular/examples/snapshots/snapshot24/index.html
+
+Sorting table columns interactively.
+https://github.com/curran/screencasts/blob/gh-pages/introToAngular/examples/snapshots/snapshot25/index.html
+
+Interactively reversing sort order.
+https://github.com/curran/screencasts/blob/gh-pages/introToAngular/examples/snapshots/snapshot26/index.html
+
+Adding country flag images.
+https://github.com/curran/screencasts/blob/gh-pages/introToAngular/examples/snapshots/snapshot27/index.html
+
+Using ng-src.
+https://github.com/curran/screencasts/blob/gh-pages/introToAngular/examples/snapshots/snapshot28/index.html
+
+Adding capital data.
+https://github.com/curran/screencasts/blob/gh-pages/introToAngular/examples/snapshots/snapshot29/index.html
+
+Adding GDP data
+https://github.com/curran/screencasts/blob/gh-pages/introToAngular/examples/snapshots/snapshot30/index.html
+
+Formatting currency using Angular filters in templates.
+https://github.com/curran/screencasts/blob/gh-pages/introToAngular/examples/snapshots/snapshot31/index.html
+
+Formatting population using Angular filters in templates.
+https://github.com/curran/screencasts/blob/gh-pages/introToAngular/examples/snapshots/snapshot32/index.html
+
+Preparing for routing - making a simple country listing.
+https://github.com/curran/screencasts/blob/gh-pages/introToAngular/examples/snapshots/snapshot33/index.html
+
+Getting started with routing using ngRoute
+https://github.com/curran/screencasts/blob/gh-pages/introToAngular/examples/snapshots/snapshot34/index.html
+
+Moving templates for routes into separate files
+https://github.com/curran/screencasts/blob/gh-pages/introToAngular/examples/snapshots/snapshot35/index.html
+
+Extracting and using parameters from routes
+https://github.com/curran/screencasts/blob/gh-pages/introToAngular/examples/snapshots/snapshot36/index.html
+
+Using links with routes for navigation between views
+https://github.com/curran/screencasts/blob/gh-pages/introToAngular/examples/snapshots/snapshot37/index.html
+
+Looking up details for a single country
+https://github.com/curran/screencasts/blob/gh-pages/introToAngular/examples/snapshots/snapshot38/index.html
+
+Surfacing data on the country details page
+https://github.com/curran/screencasts/blob/gh-pages/introToAngular/examples/snapshots/snapshot39/index.html
+
+Creating a service for loading the list of countries
+https://github.com/curran/screencasts/blob/gh-pages/introToAngular/examples/snapshots/snapshot40/index.html
+
+Extracting the country details query into a service
+https://github.com/curran/screencasts/blob/gh-pages/introToAngular/examples/snapshots/snapshot41/index.html
+
+Caching JSON data in a service.
+https://github.com/curran/screencasts/blob/gh-pages/introToAngular/examples/snapshots/snapshot42/index.html
+
+Caching JSON using cache option
+https://github.com/curran/screencasts/blob/gh-pages/introToAngular/examples/snapshots/snapshot43/index.html
+
+Creating a custom filter to encode URIs
+https://github.com/curran/screencasts/blob/gh-pages/introToAngular/examples/snapshots/snapshot44/index.html
+
+Simulating a RESTful service by splitting the JSON data across files.
+https://github.com/curran/screencasts/blob/gh-pages/introToAngular/examples/snapshots/snapshot45/index.html
+
+Creating a custom Angular directive for country entries.
+https://github.com/curran/screencasts/blob/gh-pages/introToAngular/examples/snapshots/snapshot46/index.html
+
+Adding a controller to our custom directive
+https://github.com/curran/screencasts/blob/gh-pages/introToAngular/examples/snapshots/snapshot47/index.html
+
+Fetching data within custom directives - adding flags to the country listing.
+https://github.com/curran/screencasts/blob/gh-pages/introToAngular/examples/snapshots/snapshot48/index.html
+
+Extracting controllers into a separate module
+https://github.com/curran/screencasts/blob/gh-pages/introToAngular/examples/snapshots/snapshot49/index.html
+
+Extracting factories and directives to separate modules using method chaining.
+https://github.com/curran/screencasts/blob/gh-pages/introToAngular/examples/snapshots/snapshot50/index.html
+
