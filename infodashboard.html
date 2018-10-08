@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html lang="en-US" ng-app="dialogDemo2">
+
+<!--
+    ref: https://material.angularjs.org/latest/getting-started
+-->
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.css">
+    <link href="CSS/icons-font/css/all.css" rel="stylesheet">
+	
+	<style>
+	
+		.dialogdemoBasicUsage #popupContainer {
+			position: relative; }
+
+		.dialogdemoBasicUsage .footer {
+			width: 100%;
+			text-align: center;
+			margin-left: 20px; }
+
+		.dialogdemoBasicUsage .footer, .dialogdemoBasicUsage .footer > code {
+			font-size: 0.8em;
+			margin-top: 50px; }
+
+		.dialogdemoBasicUsage button {
+			width: 200px; }
+
+		.dialogdemoBasicUsage div#status {
+			color: #c60008; }
+
+		.dialogdemoBasicUsage .dialog-demo-prerendered md-checkbox {
+			margin-bottom: 0; }
+
+			
+	</style>
+	
+</head>
+
+<body>
+
+    <!-- Angular Material requires Angular.js Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-messages.min.js"></script>
+    <!-- Angular Material Library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.js"></script>
+
+<div ng-controller="AppCtrl" layout="row" ng-cloak style="height: 300px">
+  <style>
+      .edgePadding {
+        padding-left: 25px;
+        padding-right: 25px;
+      }
+
+  </style>
+
+  <div layout="column" layout-align="center center"
+       style="background-color: #f2f2f2" class="md-padding">
+    <span id="left">left</span>
+  </div>
+
+  <div layout="column" layout-align="center start" layout-padding flex>
+    <p class="inset">
+      A dialog can specify its origin and target with <code>openFrom</code> and
+      <code>closeTo</code> properties.
+
+      The options showFrom and closeTo can be specified as a string [where internally
+      querySelector( ) is used to perform the DOM element lookup],
+      element or an Rect object [with top, left, width, height fields].
+    </p>
+
+    <div class="dialog-demo-content" layout="column" layout-align="center center" style="width:100%">
+      <md-button class="md-primary md-raised edgePadding" ng-click="openFromLeft()" >
+        Open From Left - Close To Right
+      </md-button>
+      <md-button class="md-primary md-raised edgePadding" ng-click="openOffscreen()" >
+        Open From Top Left - Close Slide Down
+      </md-button>
+	   <md-button class="md-primary md-raised" ng-click="showPrerenderedDialog($event)">
+		Pre-Rendered Dialog
+    </md-button>
+    </div>
+
+  </div>
+
+  <div layout="column" layout-align="center center"
+       style="background-color: #f2f2f2" class="md-padding">
+    <span id="right">right</span>
+  </div>
+  
+  <!--
+  <div style="visibility: hidden">
+    <div class="md-dialog-container" id="myDialog">
+      <md-dialog layout-padding>
+        <h2>Pre-Rendered Dialog</h2>
+        <p>
+          This is a pre-rendered dialog, which means that <code>$mdDialog</code> doesn't compile its
+          template on each opening.
+          <br/><br/>
+          The Dialog Element is a static element in the DOM, which is just visually hidden.<br/>
+          Once the dialog opens, we just fetch the element from the DOM into our dialog and upon close
+          we restore the element back into its old DOM position.
+        </p>
+      </md-dialog>
+    </div>
+  </div>
+-->  
+  
+  
+  <div style="visibility: hidden">
+    <div class="md-dialog-container" id="myDialog">
+      <md-dialog layout-padding>
+			<!--NEW INFO DIALOG-START-->
+			<div layout="column" align-layout="center center" style="background-color:#fff; height:400px;width:300px;">
+				
+			            <div style="margin-top:10px;margin-left:-20px;width:300px;direction:rtl!important" ng-if="typeOfSection=='nobook'">
+							<span style="font-family:'FBReforma';font-size:18px;text-decoration: underline;">{{ storylineName | limitTo: 37 }}{{storylineName.length > 37 ? '...' : ''}}</span>
+							<div  layout="row" style="width:300px; margin-top:15px;">
+								<div flex="22"  layout="column" align-layout="center start">
+									
+									<span style="font-size:15px; font-weight:normal; color:#000;" class="ng-scope"><i class="fal fa-presentation fa-fw "></i>סוג פריט </span>
+								
+								</div>
+								<div flex="88" layout="column" align-layout="center start" style="margin-right: 9px;">
+									<span style="font-size:15px; font-weight:normal; color:#999999;text-decoration: underline;" class="ng-scope">מצגת</span>
+								</div>
+							</div>
+                        </div>
+						
+			            <div style="margin-top:10px;margin-left:-20px;width:300px;direction:rtl!important">
+						<div  layout="row" style="width:300px; margin-top:15px;">
+								<div flex="22"  layout="column" align-layout="center start">
+									<span style="font-size:15px; font-weight:normal; color:#000;" class="ng-scope"><i class="fal fa-map-signs fa-fw "></i>תחום דעת </span>
+								</div>
+								<div flex="88" layout="column" align-layout="center start" style="margin-right: 9px;">
+									<span style="font-size:15px; font-weight:normal; color:#999999;text-decoration: underline;" class="ng-scope">{{fieldKnowledgeInfoName}}</span>
+								</div>
+							</div>
+                        </div>
+						
+						<div style="margin-top:10px;margin-left:-20px;width:300px;direction:rtl!important" ng-if="typeOfSection=='book'" >
+						<div  layout="row" style="width:300px; margin-top:15px;">
+								<div flex="22"  layout="column" align-layout="center start">
+									<span style="font-size:15px; font-weight:normal; color:#000;" class="ng-scope"><i class="fal fa-books fa-fw"></i>ספר </span>
+								</div>
+								<div flex="88" layout="column" align-layout="center start" style="margin-right: 9px;">
+									<span style="font-size:15px; font-weight:normal; color:#999999;text-decoration: underline;" class="ng-scope">{{bookInfoName}}</span>
+								</div>
+							</div>
+                        </div>
+						<div style="margin-top:10px;margin-left:-20px;width:300px;direction:rtl!important" ng-if="typeOfSection=='book'" >
+						<div  layout="row" style="width:300px; margin-top:15px;">
+								<div flex="22"  layout="column" align-layout="center start">
+									<span style="font-size:15px; font-weight:normal; color:#000;" class="ng-scope"><i class="fal fa-books fa-fw"></i>ספר </span>
+								</div>
+								<div flex="88" layout="column" align-layout="center start" style="margin-right: 9px;">
+									<span style="font-size:15px; font-weight:normal; color:#999999;text-decoration: underline;" class="ng-scope">{{bookPageNumbers}}</span>
+								</div>
+							</div>
+                        </div>
+						<div style="margin-top:10px;margin-left:-20px;width:300px;direction:rtl!important" ng-if="typeOfSection!='book'" >
+						<div  layout="row" style="width:300px; margin-top:15px;">
+								<div flex="22"  layout="column" align-layout="center start">
+									<span style="font-size:15px; font-weight:normal; color:#000;" class="ng-scope"><i class="fal fa-server fa-fw"></i>יחידת תוכן </span>
+								</div>
+								<div flex="88" layout="column" align-layout="center start" style="margin-right: 9px;">
+									<span style="font-size:15px; font-weight:normal; color:#999999;text-decoration: underline;" class="ng-scope">{{yehidatochenInfo}}</span>
+								</div>
+							</div>
+                        </div>
+						<div style="margin-top:10px;margin-left:-20px;width:300px;direction:rtl!important" ng-if="typeOfSection!='book'" >
+						<div  layout="row" style="width:300px; margin-top:15px;">
+								<div flex="22"  layout="column" align-layout="center start">
+									<span style="font-size:15px; font-weight:normal; color:#000;" class="ng-scope"><i class="fal fa-book-open fa-fw"></i>נושא </span>
+								</div>
+								<div flex="88" layout="column" align-layout="center start" style="margin-right: 9px;">
+									<span style="font-size:15px; font-weight:normal; color:#999999;text-decoration: underline;" class="ng-scope">{{topicInfo}}</span>
+								</div>
+							</div>
+                        </div>
+						<div style="margin-top:10px;margin-left:-20px;width:300px;direction:rtl!important" ng-if="typeOfSection!='book'" >
+						<div  layout="row" style="width:300px; margin-top:15px;">
+								<div flex="22"  layout="column" align-layout="center start">
+									<span style="font-size:15px; font-weight:normal; color:#000;" class="ng-scope"><i class="fal fa-book-open fa-fw"></i>תת נושא </span>
+								</div>
+								<div flex="88" layout="column" align-layout="center start" style="margin-right: 9px;">
+									<span style="font-size:15px; font-weight:normal; color:#999999;text-decoration: underline;" class="ng-scope">{{SubTopicInfo}}</span>
+								</div>
+							</div>
+                        </div>
+
+
+
+			</div>
+
+			<!--NEW INFOR DIALOG-END-->
+      </md-dialog>
+    </div>
+  </div>
+
+
+
+  
+  
+</div>
+
+	
+	<script>
+	
+angular.module('dialogDemo2', ['ngMaterial'])
+
+.controller('AppCtrl', function($scope, $mdDialog) {
+  $scope.openFromLeft = function() {
+    $mdDialog.show(
+      $mdDialog.alert()
+        .clickOutsideToClose(true)
+        .title('Opening from the left')
+        .textContent('Closing to the right!')
+        .ariaLabel('Left to right demo')
+        .ok('Nice!')
+        // You can specify either sting with query selector
+        .openFrom('#left')
+        // or an element
+        .closeTo(angular.element(document.querySelector('#right')))
+    );
+  };
+
+  //my vars
+  
+  $scope.storylineName="שוואה בין מספרים בתחום ה-20";
+  $scope.typeOfSection="nobook";
+  $scope.fieldKnowledgeInfoName="מתמתיקה";
+  $scope.bookInfoName="ספר שלי";
+  $scope.yehidatochenInfo="fdfadfadfasdfasdfsdf";
+  $scope.topicInfo="Sub topic.......";
+  
+  
+  $scope.openOffscreen = function() {
+    $mdDialog.show(
+      $mdDialog.alert()
+        .clickOutsideToClose(true)
+        .title('Opening from offscreen')
+        .textContent('Closing to offscreen')
+        .ariaLabel('Offscreen Demo')
+        .ok('Amazing!')
+        // Or you can specify the rect to do the transition from
+        .openFrom({
+          top: -50,
+          width: 30,
+          height: 80
+        })
+        .closeTo({
+          left: 1500
+        })
+    );
+  };
+  
+  
+    $scope.showPrerenderedDialog = function(ev) {
+    $mdDialog.show({
+      contentElement: '#myDialog',
+      parent: angular.element(document.body),
+      targetEvent: ev,
+      clickOutsideToClose: true
+    });
+  };
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+});
+	
+	</script>
+
+</body>
+
+</html>
